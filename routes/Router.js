@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var User = require('../models/User');
+const List = require('../models/List');
 
 var name = {
     a: "김환국",
@@ -66,7 +67,16 @@ router.post('/login',async (req, res, next) => {
 })
 
 router.get('/main' ,(req, res , next)=>{
-    res.render('main')
+    List.find((err, result)=>{
+        if(err){
+            console.log(err)
+            res.status(500).send("Internal is dekay!!")
+        }
+
+        console.log(result)
+        res.render('main', {data:result})
+
+    })
 })
 
 
