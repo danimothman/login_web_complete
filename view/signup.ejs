@@ -1,4 +1,9 @@
 <%- include('_header.ejs') -%>
+<% if(message=="false") { %>
+  <script>
+    alert("<% data %>님은 이미 존재합니다.")
+  </script>
+<% } %>
 <form method="POST" action="/signup">
     <div class="form-group">
         <label for="inputname">User Name</label>
@@ -21,5 +26,4 @@
   </form>
  
   </div>
-  
 <%- include('_footer.ejs') -%>

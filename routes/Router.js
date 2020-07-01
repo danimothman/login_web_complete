@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var User = require('../models/User');
 const List = require('../models/List');
-
+var bcrypt = require('bcryptjs')
 var name = {
     a: "김환국",
     b: "홍길동",
@@ -21,21 +21,29 @@ router.get('/', function(req, res , next){
    
 })
 router.get('/signup', (req, res , next)=>{
-    res.render('signup')
+    res.render('signup'), {message:"false"}
 })
 
-router.post('/signup', (req, res , next)=>{
-    var contact = new User()
-    contact.username = req.body.username
-    contact.passwordHash = req.body.passwordHash
-    contact.email = req.body.email
 
-    contact.save((err, result)=>{
+router.post('/signup', (req, res , next)=>{
+    User.findOne({username :req.body.username} ,(err, user)=>{
         if(err) {
             console.log(err)
-        }
-        console.log(result)
-        res.send("Success")
+        } else if(user) {
+            console.log(user)
+            res.render('signup',  {message:"false" ,data:user.username})
+        } 
+        var contact = new User()
+        contact.username = req.body.username
+        contact.passwordHash =bcrypt.hashSync(req.body.passwordHash)
+        contact.email = req.body.email
+        contact.save((err, result)=>{
+            if(err) {
+                console.log(err)
+            }
+            console.log(result)
+            res.redirect("/main")
+    })
     })
 })
 
