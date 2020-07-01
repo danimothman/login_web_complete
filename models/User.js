@@ -1,22 +1,23 @@
- var mongoose = require('mongoose');
+  
+var mongoose = require('mongoose')
 
-//  var username = //require('mongoose')
-
- var userSchema = mongoose.Schema({
-     username:{
-         type:String,
-         required:true
-
-     },
+var userSchema = mongoose.Schema({
+    username:{
+        type:String,
+        required:true
+    },
     passwordHash:{
-        type:String
+        type:String,
+        required:true
     },
     email:String,
     createAt:{
         type:Date,
         default:Date.now
     }
+
 })
+
 
 var User = mongoose.model('user', userSchema);
 module.exports = User;

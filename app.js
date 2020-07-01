@@ -4,7 +4,7 @@ require('dotenv').config()
 var path = require('path')
 require('ejs')
 var apiRouter = require('./routes/Router')
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 
 var pw = process.env.PASSWORD
@@ -24,6 +24,7 @@ app.use(express.static(__dirname + '/public'));
 //     res.render('test')
 // })  
 app.use('/',apiRouter)
+
 const port = process.env.PORT
 
 app.listen(port, function(){

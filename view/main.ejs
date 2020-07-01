@@ -96,37 +96,46 @@
 </script>
 
 <!--===============================================================================================-->
-	<script src="js/main.js"></script>
-<table class="table table-dark">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-      </tr>
-    </tbody>
-  </table>
- <a href="/insert"><button type="button" class="btn btn-primary" > CREATE</button></a>
-<%- include('_footer.ejs') -%>
-</tbody>
+<script src="js/main.js"></script>
+    
+
+
+    <table class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col">NO</th>
+            <th scope="col">TITLE</th>
+            <th scope="col">DESCRIPTION</th>
+            <th scope="col">AUTHOR</th>
+            <th scope="col">EMAIL</th>
+            <th scope="col">EDIT</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
+      <div style="justify-content: end;">
+        <a href="/insert"><button type="button" class="btn btn-primary " >CREATE</button></a>
+    </div>
+      
+    
+    
+    <%- include('_footer.ejs') -%>

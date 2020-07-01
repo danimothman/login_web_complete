@@ -1,18 +1,25 @@
 <%- include('_header.ejs') -%>
 <form method="POST" action="/signup">
     <div class="form-group">
-        <label for="inputname">username</label>
-        <input type="text" id="inputname" aria-describedby="username">
+        <label for="inputname">User Name</label>
+        <input type="text" class="form-control" name="username" id="inputname"  placeholder="Enter username">
+        
+      </div>
+    <div class="form-group">
+      <label for="inputemail">Email address</label>
+      <input type="email" class="form-control" name="email" id="inputemail" aria-describedby="emailHelp" placeholder="Enter email">
+     
     </div>
     <div class="form-group">
-      <label for="exampleInputEmail1">Email address</label>
-      <input type="text" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <label for="inputpassword">Password</label>
+      <input type="password" class="form-control"  name="passwordHash" id="inputpassword" placeholder="Password">
     </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1">passwordHash</label>
-      <input type="password" id="passwordHash">
+    
+     
     </div>
-
-    <button type="회원가입" class="btn btn-primary">회원가입</button>
+    <button type="submit" class="btn btn-primary">회원가입</button>
   </form>
+ 
+  </div>
+  
 <%- include('_footer.ejs') -%>
